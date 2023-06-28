@@ -40,10 +40,11 @@ class Stack<T>{
 void main(){
   Stack<int> s = new Stack<int>();
   s.push(1);
-  s.push(2);
+  s.push(2); // 2 1
+  s.pop(); // 1
   s.push(3);
-  s.push(4);
-  s.pop();
-  s.printStack();
-  print('Top : ${s.getTop()}');
+  s.push(4); // 4 3 1
+  s.pop(); // 3 1
+  s.printStack(); // 3 1
+  print('Top : ${s.getTop()}'); // 3
 }

@@ -2,9 +2,9 @@ class Stack<T> {
   late int size;
   late int top;
   late List arr;
-  Stack() {
+  Stack(int size) {
+    this.size = size;
     top = -1;
-    size = 100;
     arr = List.filled(size, null);
   }
   bool isEmpty() {
@@ -40,12 +40,12 @@ class Stack<T> {
 }
 
 void main() {
-  Stack<int> s = Stack<int>();
+  Stack<int> s = Stack<int>(10);
   s.push(1);
   s.push(2);
   s.push(3);
-  s.push(4);
-  s.pop();
-  s.printStack();
-  print("Top : ${s.getTop()}");
+  s.push(4); // 4 3 2 1
+  s.pop(); // 3 2 1
+  s.printStack(); // 3 2 1
+  print("Top : ${s.getTop()}"); // 3
 }
